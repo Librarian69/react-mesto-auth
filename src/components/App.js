@@ -5,8 +5,6 @@ import Footer from "./Footer";
 import PopupWithForm from "./PopupWithForm";
 import ImagePopup from "./ImagePopup";
 
-import "../index.css";
-
 import AddPlacePopup from "./AddPlacePopup";
 import api from "../utils/Api";
 import EditProfilePopup from "./EditProfilePopup";
@@ -27,7 +25,7 @@ function App() {
   const [currentUser, setCurrentUser] = useState(null);
   const [cards, setCards] = useState([]);
 
-  const [isAuth, setIsAuth] = useState(false);  //Управление доступностью страницы
+  const [isAuth, setIsAuth] = useState(false);
   const navigate = useNavigate();
   const [isInfoTooltipOpen, setIsInfoTooltipOpen] = useState(false);
   const [err, setErr] = useState(false);
@@ -45,7 +43,7 @@ function App() {
         console.log(error);
       });
     }   
-  }, [isAuth, email]);
+  }, [isAuth]);
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -216,6 +214,7 @@ function App() {
         onClose={closeAllPopups}
         isOpen={isInfoTooltipOpen}
         err={err}
+        message={err ? "Что-то пошло не так! Попробуйте ещё раз." : "Вы успешно зарегистрировались!"}
       />
 
       <Footer />      

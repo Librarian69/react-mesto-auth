@@ -21,6 +21,7 @@ export default function Login({onLogin}) {
          type='email'
          value={email}
          onChange={(e) => setEmail(e.target.value)}
+         required
        >
 
        </input>
@@ -30,6 +31,7 @@ export default function Login({onLogin}) {
          type='password'
          value={password}
          onChange={(e) => setPassword(e.target.value)}
+         required
        >
 
        </input>
