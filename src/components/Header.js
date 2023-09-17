@@ -24,16 +24,16 @@ function Header ({email, onExit, isOpen }) {
   return (
     <header className={`header ${group ? 'header__reverse' : ''}`}>
       <img
-        className={`logo header__logo ${group ? 'header__logo_reverse' : 'header__logo'}`}
+        className={`logo header__logo ${group ? 'header__logo_reverse' : ''}`}
         src={logo}
         alt="Лого"
       />
       {email && <button 
-        className={`header__group ${group ? 'header_inactive' : 'header__group'}`} 
+        className={`header__group ${group ? 'header_inactive' : ''}`} 
         onClick={handleGroupClick}
       />}
       <div 
-      className={`header__container ${email ? 'header__container_auth' : ''} ${group ? 'header_active' : 'header__container'}`}>
+      className={`header__container ${email ? 'header__container_auth' : ''} ${group ? 'header_active' : ''}`}>
       {email && <span className='header__email'>
         {email}
       </span>}

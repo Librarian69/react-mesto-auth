@@ -40,7 +40,7 @@ class Auth {
 }
 
 const auth = new Auth({
-  baseUrl: "https://auth.nomoreparties.co",
+  baseUrl: "https://api.mikhail.students.nomoredomainsrocks.ru",
   headers: {
     "Content-Type": "application/json",
   },

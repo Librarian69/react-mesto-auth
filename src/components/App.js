@@ -16,6 +16,7 @@ import Login from "./Login";
 import ProtectedRoute from "./ProtectedRoute";
 import auth from "../utils/Auth";
 import InfoTooltip from "./InfoTooltip";
+import Api from "../utils/Api";
 
 function App() {
   const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = useState(false);
@@ -31,6 +32,14 @@ function App() {
   const [err, setErr] = useState(false);
   const [email, setEmail] = useState("");
   // const [group, setGroup] = useState(false);
+
+  const api = new Api({
+    baseUrl: "https://api.mikhail.students.nomoredomainsrocks.ru",
+    headers: {
+      Authorization: `Bearer ${localStorage.getItem('token')}`,
+      "Content-Type": "application/json",
+    },
+  });
 
   useEffect(() => {
     if(isAuth) {
