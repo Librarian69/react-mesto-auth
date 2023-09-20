@@ -167,7 +167,7 @@ function App() {
         if (data.token) {
           setIsAuth(true);
           localStorage.setItem("token", data.token);
-          localStorage.setItem("token", obj.email);
+          localStorage.setItem("email", obj.email);
           setEmail(obj.email);
           navigate("/");
         }
